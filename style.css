@@ -27,7 +27,6 @@ p{
   "main main main aside"
   "footer footer footer aside";
   width: 100%;
-  height: 100%;
 }
 
 /* HEADER */
@@ -86,6 +85,7 @@ header{
   border: none;
   outline: none;
   padding: 2px 8px;
+  background-color: white;
 }
 
 .showsidebar{
@@ -104,6 +104,9 @@ header{
   height: fit-content;
 }
 
+
+/* NAVBAR */
+
 nav{
   grid-area: nav;
   display: flex;
@@ -115,27 +118,96 @@ nav{
 nav ul{
   list-style: none;
   display: flex;
+  overflow: hidden;
 }
 
 nav li a{
   color: gray;
   padding: 6px 12px;
   border-radius: 4px;
+  text-wrap: nowrap;
 }
 
 nav li a:hover{
   background-color: #f8f8f8;
 }
 
+
+/* MAIN */
+
 main{
   grid-area: main;
   display: flex;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
+.content-frame{
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  border: 1px solid #c1c1c1;
+  margin: 20px;
+
+}
+
+.image-frame{
+  display: flex;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.image-frame img{
+  width: 100%;
+}
+
+.image-frame box-icon{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  rotate: 45deg;
+  fill: #ffffff;
+}
+
+.image-frame p{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  color: #ffffff;
+}
+
+.caption-frame{
+  display: flex;
+  flex-direction: column;
+}
+
+.content-links{
+  padding: 10px;
+  letter-spacing: 1px;
+}
+
+.content-links a{
+  color: blue;
+}
+
+.content-title{
+  padding: 10px;
+}
+
+
+/* ASIDE */
 
 aside{
   grid-area: aside;
   display: flex;
 }
+
+
+/* FOOTER */
 
 footer{
   grid-area: footer;
@@ -144,3 +216,58 @@ footer{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:780px){
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+  }
+
+  .header1 span{
+    display: none;
+  }
+
+  .search-entry input{
+    display: none;
+  }
+
+  .showsidebar{
+    display: flex;
+  }
+
+  .content-frame{
+    width: 100%;
+  }
+}
