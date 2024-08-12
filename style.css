@@ -2,4 +2,50 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  font-family: sans-serif;
+}
+
+body{
+  background-color: #f5f5f5;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 60px auto 60px;
+  grid-template-areas:
+  "header header header header"
+  "nav nav nav nav"
+  "main main main aside"
+  "footer footer footer aside";
+  height: 100vh;
+  width: 100%;
+}
+
+header{
+  grid-area: header;
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+nav{
+  grid-area: nav;
+  display: flex;
+  width: 100%;
+}
+
+main{
+  grid-area: main;
+  display: flex;
+}
+
+aside{
+  grid-area: aside;
+  display: flex;
+}
+
+footer{
+  grid-area: footer;
+  display: flex;
 }
