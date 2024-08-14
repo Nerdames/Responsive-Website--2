@@ -63,6 +63,7 @@ header{
   border: 1px solid black;
   overflow: hidden;
   border-radius: 4px;
+  height: 30px;
 }
 
 .search-entry form{
@@ -100,9 +101,118 @@ header{
 
 .header2{
   display: flex;
-  padding: 20px 30px;
-  height: fit-content;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
+
+.slider{
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 1s;
+}
+
+.slide img{
+  width: 800px;
+  height: 500px;
+}
+
+/* slider nav-manual */
+.nav-manual{
+  display: flex;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.manual-btn{
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  transition: 1s;cursor: pointer;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 20px;
+}
+
+.manual-btn:hover{
+  background-color: white;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+} 
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+} 
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/* automatic slide navigation*/
+
+.nav-auto{
+  display: flex;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+
+.nav-auto div{
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  transition: 1s;
+}
+
+.nav-auto div:not(:last-child){
+  margin-right: 20px;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1{
+  background-color: white;
+}
+
+#radio2:checked ~ .nav-auto .auto-btn2{
+  background-color: white;
+}
+
+#radio3:checked ~ .nav-auto .auto-btn3{
+  background-color: white;
+}
+
+#radio4:checked ~ .nav-auto .auto-btn4{
+  background-color: white;
+}
+
 
 
 /* NAVBAR */
@@ -161,6 +271,7 @@ main{
 
 .image-frame img{
   width: 100%;
+  cursor: pointer;
 }
 
 .image-frame box-icon{
@@ -169,6 +280,7 @@ main{
   top: 10px;
   rotate: 45deg;
   fill: #ffffff;
+  cursor: pointer;
 }
 
 .image-frame p{
@@ -196,6 +308,11 @@ main{
 
 .content-title{
   padding: 10px;
+  cursor: pointer;
+}
+
+.content-title:hover{
+  color: blue;
 }
 
 
@@ -204,7 +321,77 @@ main{
 aside{
   grid-area: aside;
   display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
 }
+
+.aside1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+
+.aside1-search p{
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.newsletter h2{
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.newsletter p{
+  line-height: 30px;
+}
+
+.newsletter input{
+  border: 1px solid grey;
+  outline: none;
+  border-radius: 4px;
+  height: 30px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 10px 0;
+}
+
+.newsletter button{
+  border: none;
+  outline: none;
+  background-color: grey;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 30px;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.aside2{
+  width: 100%;
+  display: flex;
+  margin: 20px 0;
+}
+
+.aside-suggest{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-around;
+  row-gap: 20px;
+}
+
+.aside-content{
+  width: 45%;
+  overflow: hidden;
+}
+
+.aside-content img{
+  width: 100%;
+}
+
 
 
 /* FOOTER */
@@ -212,6 +399,7 @@ aside{
 footer{
   grid-area: footer;
   display: flex;
+  background-color: rgb(235, 235, 235);
 }
 
 
